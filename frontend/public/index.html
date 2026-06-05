@@ -73,7 +73,7 @@
       formData.append("file", fotoSelecionada);
 
       try {
-        await fetch("https://galeriabeatriz15anos.onrender.com/upload/foto", {
+        await fetch("https://beatriz15anos-backend.onrender.com/fotos", {
           method: "POST",
           body: formData
         });
@@ -95,7 +95,7 @@
       formData.append("file", videoSelecionado);
 
       try {
-        await fetch("https://galeriabeatriz15anos.onrender.com/upload/video", {
+        await fetch("https://beatriz15anos-backend.onrender.com/videos", {
           method: "POST",
           body: formData
         });
