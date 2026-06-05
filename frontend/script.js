@@ -1,7 +1,7 @@
 // Upload de foto
 app.post("/upload/foto", upload.single("file"), async (req, res) => {
   try {
-    const drive = google.drive({ version: "v3", auth: await auth.getClient() });
+    const drive = google.drive({ version: "v3", auth: oauth2Client });
     const fileMetadata = {
       name: req.file.originalname,
       mimeType: req.file.mimetype,
@@ -27,7 +27,7 @@ app.post("/upload/foto", upload.single("file"), async (req, res) => {
 // Upload de vídeo
 app.post("/upload/video", upload.single("file"), async (req, res) => {
   try {
-    const drive = google.drive({ version: "v3", auth: await auth.getClient() });
+    const drive = google.drive({ version: "v3", auth: oauth2Client });
     const fileMetadata = {
       name: req.file.originalname,
       mimeType: req.file.mimetype,
