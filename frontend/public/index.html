@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria Beatriz 15 Anos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="card-logo">
+    <img src="img/logo.png" alt="Logo">
+  </div>
+
+  <h1>🎉 Galeria Beatriz 15 Anos 🎉</h1>
+  <h3>Faça uma vídeo-mensagem ou envie uma foto</h3>
+
+  <div class="card-aniversariante">
+    <img src="img/beatriz.jpg" alt="Beatriz 15 anos">
+
+    <h2>📸 Enviar Foto</h2>
+    <input type="file" accept="image/*" capture="environment" id="fotoInput" style="display:none">
+    <button type="button" onclick="abrirCameraFoto()">Tirar Foto</button>
+    <button type="button" onclick="enviarFoto()">Enviar Foto</button>
+
+    <h2>🎥 Enviar Vídeo</h2>
+    <input type="file" accept="video/*" capture="camcorder" id="videoInput" style="display:none">
+    <button type="button" onclick="abrirCameraVideo()">Gravar Vídeo</button>
+    <button type="button" onclick="enviarVideo()">Enviar Vídeo</button>
+
+    <div id="mensagem"></div>
+  </div>
+
+  <script>
+    let fotoSelecionada = null;
+    let videoSelecionado = null;
+
+    function mostrarMensagem(texto, tipo) {
+      const div = document.getElementById("mensagem");
+      div.textContent = texto;
+      div.className = tipo;
+    }
+
+    function abrirCameraFoto() {
+      const input = document.getElementById("fotoInput");
+      input.click();
+      input.onchange = () => {
+        fotoSelecionada = input.files[0];
+        if (fotoSelecionada) {
+          mostrarMensagem("📸 Foto capturada! Agora clique em Enviar Foto.", "sucesso");
+        }
+      };
+    }
+
+    function abrirCameraVideo() {
+      const input = document.getElementById("videoInput");
+      input.click();
+      input.onchange = () => {
+        videoSelecionado = input.files[0];
+        if (videoSelecionado) {
+          mostrarMensagem("🎥 Vídeo gravado! Agora clique em Enviar Vídeo.", "sucesso");
+        }
+      };
+    }
+
+    async function enviarFoto() {
+      if (!fotoSelecionada) {
+        mostrarMensagem("Nenhuma foto capturada.", "erro");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("file", fotoSelecionada);
+
+      try {
+        await fetch("https://beatriz15anos-backend.onrender.com/upload/foto", {
+          method: "POST",
+          body: formData
+        });
+        mostrarMensagem("📸 Foto enviada com sucesso!", "sucesso");
+        alert("Obrigado! Sua foto foi enviada com sucesso para a galeria da Beatriz 🎉");
+        fotoSelecionada = null;
+      } catch (err) {
+        mostrarMensagem("❌ Falha na conexão.", "erro");
+      }
+    }
+
+    async function enviarVideo() {
+      if (!videoSelecionado) {
+        mostrarMensagem("Nenhum vídeo gravado.", "erro");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("file", videoSelecionado);
+
+      try {
+        await fetch("https://beatriz15anos-backend.onrender.com/upload/video", {
+          method: "POST",
+          body: formData
+        });
+        mostrarMensagem("🎥 Vídeo enviado com sucesso!", "sucesso");
+        alert("Obrigado! Seu vídeo foi enviado com sucesso para a galeria da Beatriz 🎉");
+        videoSelecionado = null;
+      } catch (err) {
+        mostrarMensagem("❌ Falha na conexão.", "erro");
+      }
+    }
+  </script>
+</body>
+</html>
