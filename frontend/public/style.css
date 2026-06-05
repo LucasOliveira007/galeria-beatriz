@@ -11,11 +11,7 @@
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   text-align: center;
-  background: linear-gradient(
-    135deg,
-    #f8f3ff,
-    #ffffff
-  );
+  background: linear-gradient(135deg, #f8f3ff, #ffffff);
   color: #333;
   padding: 20px;
 }
@@ -25,10 +21,10 @@ body {
 ========================== */
 
 .card-logo img {
-  width: 120px;
+  width: 100px;
   height: auto;
   display: block;
-  margin: 10px auto 20px;
+  margin: 10px auto 15px;
 }
 
 /* ==========================
@@ -37,14 +33,15 @@ body {
 
 h1 {
   color: #a57be9;
-  font-size: 2.2rem;
-  margin-bottom: 15px;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
 }
 
 h3 {
   color: #444;
   font-weight: 600;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  font-size: 1rem;
 }
 
 /* ==========================
@@ -52,16 +49,13 @@ h3 {
 ========================== */
 
 .card-aniversariante {
-  max-width: 450px;
+  max-width: 380px;
   margin: 0 auto;
   background: #fff;
-
-  border-radius: 25px;
-
+  border-radius: 15px;
   overflow: hidden;
-
-  box-shadow:
-    0 10px 30px rgba(165,123,233,.18);
+  box-shadow: 0 6px 20px rgba(165,123,233,.18);
+  padding-bottom: 15px;
 }
 
 /* ==========================
@@ -70,13 +64,10 @@ h3 {
 
 .card-aniversariante img {
   width: 100%;
-  height: 340px;
-
+  height: 220px; /* mais compacto */
   object-fit: cover;
-
   display: block;
-
-  border-bottom: 5px solid #a57be9;
+  border-bottom: 4px solid #a57be9;
 }
 
 /* ==========================
@@ -85,9 +76,9 @@ h3 {
 
 h2 {
   color: #a57be9;
-  font-size: 2rem;
-  margin-top: 25px;
-  margin-bottom: 15px;
+  font-size: 1.4rem;
+  margin-top: 15px;
+  margin-bottom: 8px;
 }
 
 /* ==========================
@@ -95,43 +86,27 @@ h2 {
 ========================== */
 
 button {
-  background: linear-gradient(
-    135deg,
-    #a57be9,
-    #8f63dd
-  );
-
+  background: linear-gradient(135deg, #a57be9, #8f63dd);
   color: white;
-
   border: none;
-  border-radius: 50px;
-
-  padding: 14px 24px;
-
-  margin: 8px;
-
-  font-size: 16px;
+  border-radius: 30px;
+  padding: 8px 14px; /* menor */
+  margin: 6px;
+  font-size: 13px;
   font-weight: 600;
-
-  min-width: 150px;
-
+  min-width: 110px; /* mais compacto */
   cursor: pointer;
-
   transition: all .25s ease;
-
-  box-shadow:
-    0 5px 15px rgba(165,123,233,.35);
+  box-shadow: 0 4px 12px rgba(165,123,233,.35);
 }
 
 button:hover {
   transform: translateY(-2px);
-
-  box-shadow:
-    0 8px 20px rgba(165,123,233,.45);
+  box-shadow: 0 6px 16px rgba(165,123,233,.45);
 }
 
 button:active {
-  transform: scale(.98);
+  transform: scale(.97);
 }
 
 /* ==========================
@@ -139,31 +114,26 @@ button:active {
 ========================== */
 
 #mensagem {
-  margin: 25px auto;
-
+  margin: 15px auto;
   width: 90%;
-  max-width: 380px;
-
-  border-radius: 12px;
-
-  font-size: 15px;
+  max-width: 320px;
+  border-radius: 10px;
+  font-size: 13px;
   font-weight: 600;
-
-  padding: 14px 18px;
-
+  padding: 10px 14px;
   transition: .3s;
 }
 
 .sucesso {
   background: #f3ecff;
   color: #6d3ec9;
-  border-left: 5px solid #a57be9;
+  border-left: 4px solid #a57be9;
 }
 
 .erro {
   background: #fff0f0;
   color: #d32f2f;
-  border-left: 5px solid #ff6b6b;
+  border-left: 4px solid #ff6b6b;
 }
 
 /* ==========================
@@ -171,25 +141,24 @@ button:active {
 ========================== */
 
 @media (max-width: 600px) {
-
   body {
-    padding: 15px;
+    padding: 12px;
   }
 
   h1 {
-    font-size: 1.9rem;
+    font-size: 1.6rem;
   }
 
   h2 {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
 
   button {
-    width: 85%;
-    max-width: 280px;
+    width: 80%;
+    max-width: 240px;
   }
 
   .card-aniversariante img {
-    height: 300px;
+    height: 200px;
   }
 }
