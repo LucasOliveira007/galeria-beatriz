@@ -59,20 +59,10 @@ h3 {
    CARD PRINCIPAL
 ========================== */
 
-.card-aniversariante {
-  max-width: 360px;
-  margin: auto;
-
-  background: #fff;
-
-  border-radius: 18px;
-
-  overflow: hidden;
-
-  box-shadow:
-    0 6px 18px rgba(165,123,233,.18);
-
-  padding-bottom: 10px;
+.card-aniversariante img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* ==========================
