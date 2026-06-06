@@ -1,7 +1,6 @@
 /* ==========================
    CONFIGURAÇÃO GERAL
 ========================== */
-
 * {
   margin: 0;
   padding: 0;
@@ -9,146 +8,136 @@
 }
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  text-align: center;
 
-  background: linear-gradient(
-    135deg,
-    #f8f3ff,
-    #ffffff
-  );
-
-  color: #333;
-
-  padding: 8px;
-
+ display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* mantém no topo */
   min-height: 100vh;
-
-  overflow: hidden;
+  background: url("img/fundo.jpg") no-repeat center top fixed;
+  background-size: cover;
 }
+
 
 /* ==========================
    LOGO
 ========================== */
-
 .card-logo img {
-  width: 70px;
+  width: 100px;
   height: auto;
-  display: block;
-  margin: 5px auto;
+  display: flex;
+  margin: 10px auto;
+  margin-top: 20px; /* desce a logo */
+  margin-bottom: -20px; /* reduz espaço entre logo e título */
+
 }
 
 /* ==========================
    TÍTULOS
 ========================== */
-
 h1 {
-  color: #a57be9;
-  font-size: 1.3rem;
-  margin-bottom: 4px;
+  color: #ffffff;
+  font-size: 1.6rem;
+  margin-bottom: 6px;
 }
 
 h3 {
-  color: #666;
-  font-size: 0.8rem;
-  font-weight: 500;
-  margin-bottom: 10px;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
 }
 
 /* ==========================
    CARD PRINCIPAL
 ========================== */
-
-.card-aniversariante img {
-  width: 100%;
-  height: auto;
-  display: block;
+.card-aniversariante {
+  max-width: 360px;
+  margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(165,123,233,.18);
+  padding-bottom: 12px;
 }
 
 /* ==========================
    FOTO DA BEATRIZ
 ========================== */
-
 .card-aniversariante img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    object-position: center center;
-    display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #a57be9;
 }
 
 /* ==========================
    SEÇÕES
 ========================== */
-
 h2 {
   color: #a57be9;
-  font-size: 1rem;
-
-  margin-top: 10px;
-  margin-bottom: 5px;
+  font-size: 1.2rem;
+  margin-top: 12px;
+  margin-bottom: 8px;
 }
 
 /* ==========================
    BOTÕES
 ========================== */
+.btn-row {
+  display: flex;
+  justify-content: space-between; /* joga um pra esquerda e outro pra direita */
+  gap: 10px; /* espaço entre eles */
+  margin: 10px 0;
+}
+
+.btn-row button {
+  flex: 1; /* cada botão ocupa o mesmo tamanho */
+}
 
 button {
-  background:
-    linear-gradient(
-      135deg,
-      #a57be9,
-      #8f63dd
-    );
-
-  color: white;
-
+  background: #2e2e2e; /* cor de fundo escura */
+  color: #fff;         /* texto branco para contraste */
   border: none;
-
-  border-radius: 25px;
-
-  padding: 8px 12px;
-
-  margin: 4px;
-
-  font-size: 12px;
-
+  border-radius: 8px;
+  padding: 10px 1px;
+  margin: 5px;
+  font-size: 14px;
   font-weight: 600;
-
-  min-width: 120px;
-
   cursor: pointer;
-
-  box-shadow:
-    0 4px 10px rgba(165,123,233,.25);
-
-  transition: .2s;
+  transition: all .25s ease;
 }
 
 button:hover {
-  transform: translateY(-1px);
+  background: #444; /* tom mais claro no hover */
 }
 
-button:active {
-  transform: scale(.98);
+/* Botão principal (laranja) */
+.btn-primary {
+  background: linear-gradient(135deg, #ff9a3c, #ff6b00);
+  color: #fff;
+}
+
+/* Botão secundário (cinza) */
+.btn-secondary {
+  background: #e0e0e0;
+  color: #333;
+}
+
+button:hover {
+  transform: translateY(-2px);
 }
 
 /* ==========================
    MENSAGENS
 ========================== */
-
 #mensagem {
-  margin: 8px auto;
-
+  margin: 12px auto;
   width: 90%;
-
+  max-width: 300px;
   border-radius: 8px;
-
-  font-size: 12px;
-
+  font-size: 13px;
   font-weight: 600;
-
-  padding: 8px;
+  padding: 8px 12px;
 }
 
 .sucesso {
@@ -164,34 +153,10 @@ button:active {
 }
 
 /* ==========================
-   CELULARES PEQUENOS
+   RESPONSIVO
 ========================== */
-
-@media (max-height: 750px) {
-
-  .card-logo img {
-    width: 60px;
-  }
-
-  h1 {
-    font-size: 1.15rem;
-  }
-
-  h3 {
-    font-size: 0.75rem;
-  }
-
-  .card-aniversariante img {
-    height: 120px;
-  }
-
-  h2 {
-    font-size: .95rem;
-  }
-
-  button {
-    padding: 7px 10px;
-    font-size: 11px;
-    min-width: 110px;
+@media (max-width: 600px) {
+  .btn-group {
+    flex-direction: column;
   }
 }
