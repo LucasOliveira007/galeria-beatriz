@@ -12,22 +12,29 @@
     <img src="img/logo.png" alt="Logo">
   </div>
 
-  <h1>🎉 Galeria Beatriz 15 Anos 🎉</h1>
-  <h3>Faça uma vídeo-mensagem ou envie uma foto</h3>
+  <h1>GALERIA</h1>
+  <h3>ANIVERSÁRIO DE 15 ANOS </h3>
 
   <div class="card-aniversariante">
-    <img src="img/beatriz.jpg" alt="Beatriz 15 anos">
+    <img src="img/beatriz.png" alt="Beatriz 15 anos">
 
-    <h2>📸 Enviar Foto</h2>
+    <h3>Faça uma vídeo-mensagem ou envie uma foto</h3>
+    
+    
+    
+    <h2>📸</h2>
     <input type="file" accept="image/*" capture="environment" id="fotoInput" style="display:none">
-    <button type="button" onclick="abrirCameraFoto()">Tirar Foto</button>
-    <button type="button" onclick="enviarFoto()">Enviar Foto</button>
-
-    <h2>🎥 Enviar Vídeo</h2>
+    <div class="btn-row">
+    <button type="button" onclick="abrirCameraFoto()">TIRAR FOTO</button>
+    <button type="button" onclick="enviarFoto()">ENVIAR FOTO</button>
+    </div>
+    
+    <h2>🎥</h2>
     <input type="file" accept="video/*" capture="camcorder" id="videoInput" style="display:none">
-    <button type="button" onclick="abrirCameraVideo()">Gravar Vídeo</button>
-    <button type="button" onclick="enviarVideo()">Enviar Vídeo</button>
-
+    <div class="btn-row">
+    <button type="button" onclick="abrirCameraVideo()">GRAVAR VÍDEO</button>
+    <button type="button" onclick="enviarVideo()">ENVIAR VÍDEO</button>
+    </div>
     <div id="mensagem"></div>
   </div>
 
